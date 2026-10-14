@@ -1,0 +1,15 @@
+﻿.vscode/**
+.git/**
+.gitignore
+src/**
+node_modules/**
+*.map
+.eslintrc*
+eslint.config.mjs
+esbuild.js
+README.md
+CHANGELOG.md
+!dist/**
+!package.json
+!README.md
+!CHANGELOG.md

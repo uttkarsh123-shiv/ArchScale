@@ -1,0 +1,93 @@
+{
+  "name": "archscale",
+  "displayName": "ArchScale",
+  "description": "AI-assisted architecture and scalability analysis for Node.js projects.",
+  "version": "0.0.1",
+  "publisher": "archscale",
+  "license": "MIT",
+  "homepage": "https://github.com/your-org/archscale",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/archscale.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/archscale/issues"
+  },
+  "keywords": [
+    "architecture",
+    "scalability",
+    "ai",
+    "analysis",
+    "nodejs",
+    "performance"
+  ],
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onCommand:archscale.helloWorld",
+    "onCommand:archscale.analyzeWorkspace"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "archscale.helloWorld",
+        "title": "ArchScale: Hello World"
+      },
+      {
+        "command": "archscale.analyzeWorkspace",
+        "title": "ArchScale: Analyze Current Project"
+      }
+    ],
+    "configuration": {
+      "title": "ArchScale",
+      "properties": {
+        "archscale.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the ArchScale extension."
+        },
+        "archscale.defaultPrompt": {
+          "type": "string",
+          "default": "Review this project for architecture quality, scalability risks, and modernization opportunities.",
+          "description": "Default prompt used when asking ArchScale to analyze a project."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.140.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "esbuild": "^0.28.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}

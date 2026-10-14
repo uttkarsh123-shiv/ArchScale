@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+out/
+coverage/
+
+# VS Code extension test artifacts
+.vscode-test/
+*.vsix
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional local settings
+.vscode/settings.json
