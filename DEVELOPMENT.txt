@@ -1,0 +1,11 @@
+Project: ArchScale
+
+Day 1: 
+
+Extension qill:
+1. Read the open workspace's package.json.
+2. Detect supported frameworks and installed dependencies.
+3. Identify the package manager from lockfiles.
+4. Display a structured report in a VS code panel.
+5. Report missing package.json or Invalid JSON without crashing.
+
